@@ -1,0 +1,21 @@
+{
+  "posts": [
+    {
+      "id": "5",
+      "title": "nesciunt quas odio",
+      "body": "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque",
+      "createdAt": "2023-10-01T12:00:00Z",
+      "userId": 1
+    }
+  ],
+  "comments": [],
+  "albums": [],
+  "photos": [],
+  "users": [
+    {
+      "id": 1,
+      "name": "Leanne Graham"
+    }
+  ],
+  "todos": []
+}
