@@ -37,7 +37,7 @@ export const postsApi = {
   delete: (id: number) => {
     return new Promise<void>((resolve, reject) => {
       setTimeout(() => {
-        console.log(`Fake delete post with id: ${id} - Failure`);
+        console.error(`Fake delete post with id: ${id} - Failure`);
         reject();
       }, 500); // Simulate network delay
     });

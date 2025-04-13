@@ -32,7 +32,7 @@ const Posts: React.FC<PostsProps> = () => {
   return (
     <Stack p="md">
       {pendingMutations.map((mutation) => (
-        <Card withBorder>
+        <Card withBorder key={mutation.mutationId}>
           <Text fw="bold">Mutation: {mutation.mutationId}</Text>
           <Group>
             <Badge color="orange">Status: {mutation.state.status}</Badge>
