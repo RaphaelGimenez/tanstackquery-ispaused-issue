@@ -4,11 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "serve-api": "json-server --middlewares api/fake-timeout-middleware.cjs --watch api/db.json --port 3001",
-    "dev": "concurrently \"vite\" \"pnpm run serve-api\"",
+    "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "pnpm build && concurrently \"vite preview\" \"pnpm run serve-api\"",
+    "preview": "preview",
     "generate-pwa-icons": "pwa-assets-generator"
   },
   "dependencies": {

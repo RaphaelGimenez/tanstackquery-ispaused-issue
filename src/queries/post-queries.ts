@@ -10,15 +10,6 @@ export const postQueries = {
     queryOptions({
       queryKey: [...postQueries.lists(), filters],
 
-      queryFn: () => postsApi.getAll(filters),
-    }),
-
-  details: () => [...postQueries.all(), "detail"],
-
-  detail: (id: number) =>
-    queryOptions({
-      queryKey: [...postQueries.details(), id],
-
-      queryFn: () => postsApi.getById(id),
+      queryFn: () => postsApi.getAll(),
     }),
 };
