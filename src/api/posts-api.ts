@@ -31,15 +31,15 @@ export const postsApi = {
           },
         ];
         resolve(fakePosts);
-      }, 1000); // Simulate network delay
+      }, 100); // Simulate network delay
     });
   },
   delete: (id: number) => {
     return new Promise<void>((resolve, reject) => {
       setTimeout(() => {
-        console.log(`Fake delete post with id: ${id}`);
+        console.log(`Fake delete post with id: ${id} - Failure`);
         reject();
-      }, 1500); // Simulate network delay
+      }, 500); // Simulate network delay
     });
   },
 };
