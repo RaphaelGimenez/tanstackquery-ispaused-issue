@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "preview",
+    "preview": "vite preview",
     "generate-pwa-icons": "pwa-assets-generator"
   },
   "dependencies": {
