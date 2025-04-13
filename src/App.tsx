@@ -14,7 +14,6 @@ import { lazy, useEffect } from "react";
 import Posts from "./components/posts.tsx";
 import { createSyncStoragePersister } from "@tanstack/query-sync-storage-persister";
 import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
-import { TypedContext } from "./utils/mutations.ts";
 import {
   deletePostMutationKey,
   deletePostMutationDefaults,
@@ -36,29 +35,13 @@ const queryClient = new QueryClient({
     },
   },
   mutationCache: new MutationCache({
-    onSuccess: (_d, _v, context) => {
-      queryClient.invalidateQueries();
-
-      const tContext = context as TypedContext;
-      if (tContext?.metadata) {
-        notifications.show({
-          title: tContext.metadata.title,
-          message: "Your changes have been saved",
-          color: "green",
-          withCloseButton: true,
-        });
-      }
-    },
-    onError: (_e, _v, context) => {
-      const tContext = context as TypedContext;
-      if (tContext?.metadata) {
-        notifications.show({
-          title: tContext.metadata.title,
-          message: "We could not save your changes",
-          color: "red",
-          withCloseButton: true,
-        });
-      }
+    onError: () => {
+      notifications.show({
+        title: "Error",
+        message: "We could not save your changes",
+        color: "red",
+        withCloseButton: true,
+      });
     },
   }),
 });
